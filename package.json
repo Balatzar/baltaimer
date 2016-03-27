@@ -1,0 +1,15 @@
+{
+  "name": "baltaimer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "baltaimer.js",
+  "scripts": {
+    "test": "tap ./test/*.js --cov"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tap": "^5.7.0"
+  }
+}
