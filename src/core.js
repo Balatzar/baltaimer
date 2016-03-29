@@ -1,9 +1,17 @@
-var printTime = require("./src/printTime");
+var exec = require('child_process').exec;
+var printTime = require("./printTime");
 
-var min = 24;
-var sec = 60;
+var min = 0;
+var sec = 3;
+var initialRun = true;
+var localOptions;
 
-module.exports = function timer() {
+module.exports = function timer(options) {
+  if (initialRun) {
+    localOptions = options;
+    initialRun = false;
+  }
+
   sec -= 1;
   console.log(printTime(sec, min));
   if (!sec && min) {
@@ -13,6 +21,10 @@ module.exports = function timer() {
   if (sec || min) {
     setTimeout(timer, 1000);
   } else {
-    exec("xmessage -center -timeout 5 'Le timer est terminado !'");
+    if (localOptions && localOptions.setTimeout) {
+      exec("xmessage -center -timeout " + localOptions.setTimeout + " 'Le timer est terminado !'");
+    } else {
+      exec("xmessage -center 'Le timer est terminado !'");
+    }
   }
 };
