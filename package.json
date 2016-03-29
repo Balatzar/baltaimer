@@ -1,14 +1,14 @@
 {
   "name": "baltaimer",
   "version": "1.0.0",
-  "description": "",
+  "description": "a custom podoromo to learn TDD",
   "main": "baltaimer.js",
   "scripts": {
     "test": "tap ./test/*.js --cov"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "balthazar",
+  "license": "wat",
   "devDependencies": {
     "tap": "^5.7.0"
   }
