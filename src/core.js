@@ -1,8 +1,8 @@
 var exec = require('child_process').exec;
 var printTime = require("./printTime");
 
-var min = 0;
-var sec = 3;
+var min = 24;
+var sec = 60;
 var initialRun = true;
 var localOptions;
 
